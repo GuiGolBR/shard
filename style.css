@@ -19,7 +19,7 @@ body {
 
 h1 {
     color: #f7c100;
-    margin-bottom: -5px;
+    margin-bottom: 50px;
 }
 
 
@@ -34,9 +34,19 @@ input {
     width: 58px;
 }
 
+#currentShards {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 .result {
     margin-top: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
 }
 
 .logo {
@@ -44,6 +54,24 @@ input {
     height: auto;
     margin: 20px auto;
     margin-bottom: -20px;
+}
+
+#shardBox {
+    opacity: 0.5;
+    z-index: -1;
+    justify-self: center;
+    width: 50%;
+    margin-top: -93px;
+    margin-bottom: -20px;
+}
+
+#shardIcon {
+    opacity: 0.5;
+    z-index: -1;
+    justify-self: center;
+    width: 120px;
+    margin-bottom: -168px;
+    align-self: center;
 }
 
 /* Responsive styles */
@@ -59,7 +87,11 @@ input {
     }
 
     .result {
-        font-size: 20px;
+        font-size: 50px;
+    }
+
+    #shardIcon {
+        margin-bottom: -156px;
     }
 
 }
@@ -75,10 +107,14 @@ input {
     }
 
     .result {
-        font-size: 18px;
+        font-size: 50px;
     }
     .logo {
         width: 150px;
         margin-bottom: -10px;
+    }
+
+    #shardIcon {
+        margin-bottom: -145px;
     }
 }

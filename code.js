@@ -23,5 +23,14 @@ function calculateBoxes() {
     const zScore = (shardsNeeded - averageShardsPerBox) / standardDeviation;
     const boxesNeeded = Math.ceil(shardsNeeded / averageShardsPerBox / probability);
 
-    document.getElementById('result').textContent = `You need approximately ${boxesNeeded} shard boxes to reach 400 shards.`;
+    const resultElement = document.getElementById('result');
+    resultElement.textContent = `${boxesNeeded}`;
+
+    const image = document.createElement('img');
+    image.alt = 'ShardBox';
+    image.id = 'shardBox';
+    image.src = 'assets/ShardBox.png';
+
+    resultElement.style.position = 'relative';
+    resultElement.appendChild(image);
 }
