@@ -1,9 +1,9 @@
 function calculateBoxes() {
     const currentShards = parseInt(document.getElementById('currentShards').value, 10);
-    const probability = parseFloat(document.getElementById('probability').value) / 100;
+    const probability = 0.95;
 
-    if (isNaN(currentShards) || isNaN(probability) || currentShards < 0 || probability <= 0 || probability > 1) {
-        document.getElementById('result').textContent = "Please enter valid inputs.";
+    if (isNaN(currentShards) || currentShards < 0) {
+        document.getElementById('result').textContent = "Please enter a valid number of shards.";
         return;
     }
 
@@ -15,8 +15,7 @@ function calculateBoxes() {
         return;
     }
 
-    // Calculate the number of boxes needed
-    const averageShardsPerBox = 2; // Average of 1, 2, and 3
+    const averageShardsPerBox = 2;
     const variance = (1 ** 2 + 2 ** 2 + 3 ** 2) / 3 - averageShardsPerBox ** 2;
     const standardDeviation = Math.sqrt(variance);
 
