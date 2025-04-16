@@ -1,1 +1,1 @@
-# shard
+# Limbus Company Shard Box calculator
