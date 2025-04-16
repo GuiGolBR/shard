@@ -32,6 +32,8 @@ label, input, button {
 
 input {
     width: 58px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 #currentShards {

@@ -11,7 +11,7 @@
     <img src="assets/LCB_Logo.png" alt="Limbus Company Logo" class="logo">
     <h1>Shard Box Calculator</h1>
     <img src="assets/shard.png" alt="Shard Icon" id="shardIcon">
-    <form id="shardForm">
+    <form id="shardForm" onsubmit="event.preventDefault(); calculateBoxes();">
         <label for="currentShards">Number of shards:</label>
         <input type="number" id="currentShards" name="currentShards" min="0" required>
 
