@@ -13,8 +13,7 @@
     <img src="assets/shard.png" alt="Shard Icon" id="shardIcon">
     <form id="shardForm" onsubmit="event.preventDefault(); calculateBoxes();">
         <label for="currentShards">Number of shards:</label>
-        <input type="number" id="currentShards" name="currentShards" min="0" required>
-
+        <input type="number" id="currentShards" name="currentShards" min="0" max="999" required>
         <button type="button" onclick="calculateBoxes()">Calculate</button>
     </form>
     <div class="result" id="result"></div>
