@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'BebasKai';
+    src: url('assets/BebasKai.otf') format('opentype');
+}
+body {
+    font-family: 'BebasKai', Arial, sans-serif;
+    margin: 20px;
+    background-color: black;
+    color: #dac9a0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    letter-spacing: 1px;
+    font-size: 30px;
+}
+
+h1 {
+    color: #f7c100;
+    margin-bottom: -5px;
+}
+
+
+label, input, button {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    justify-self: center;
+}
+
+input {
+    width: 58px;
+}
+
+.result {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    margin: 20px auto;
+    margin-bottom: -20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 25px; /* Increased font size for tablet screens */
+        padding: 10px;
+    }
+
+    label, input, button {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    .result {
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 18px;
+        padding: 5px;
+    }
+
+    label, input, button {
+        margin: 3px 0;
+    }
+
+    .result {
+        font-size: 18px;
+    }
+    .logo {
+        width: 150px;
+        margin-bottom: -10px;
+    }
+}
