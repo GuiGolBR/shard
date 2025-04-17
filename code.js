@@ -1,9 +1,9 @@
 function calculateBoxes() {
     const currentShards = parseInt(document.getElementById('currentShards').value, 10);
-    const probability = 0.95;
+    const resultElement = document.getElementById('result');
 
     if (isNaN(currentShards) || currentShards < 0) {
-        document.getElementById('result').textContent = "Please enter a valid number of shards.";
+        resultElement.textContent = "Please enter a valid number of shards.";
         return;
     }
 
@@ -11,25 +11,32 @@ function calculateBoxes() {
     const shardsNeeded = targetShards - currentShards;
 
     if (shardsNeeded <= 0) {
-        document.getElementById('result').textContent = "You already have enough shards!";
+        resultElement.textContent = "You already have enough shards!";
         return;
     }
 
-    const averageShardsPerBox = 2;
-    const variance = (1 ** 2 + 2 ** 2 + 3 ** 2) / 3 - averageShardsPerBox ** 2;
-    const standardDeviation = Math.sqrt(variance);
+    const z95 = 1.645;
+    const stdPerBox = 0.816; // from variance calculation
 
-    const zScore = (shardsNeeded - averageShardsPerBox) / standardDeviation;
-    const boxesNeeded = Math.ceil(shardsNeeded / averageShardsPerBox / probability);
+    let boxes = 1;
+    while (true) {
+        const mean = 2 * boxes;
+        const std = stdPerBox * Math.sqrt(boxes);
+        const lowerBound = mean - z95 * std;
 
-    const resultElement = document.getElementById('result');
-    resultElement.textContent = `${boxesNeeded}`;
+        if (lowerBound >= shardsNeeded) {
+            break;
+        }
+        boxes++;
+    }
 
+    resultElement.textContent = `${boxes}`;
+
+    // Optional image
     const image = document.createElement('img');
     image.alt = 'ShardBox';
     image.id = 'shardBox';
     image.src = 'assets/ShardBox.png';
-
     resultElement.style.position = 'relative';
     resultElement.appendChild(image);
 }
